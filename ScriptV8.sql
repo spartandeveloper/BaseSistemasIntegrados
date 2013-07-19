@@ -1,6 +1,7 @@
 use master
-go
+if exists(select * from sysdatabases where name='TECAv8')
 drop database TECAv8
+go
 Create Database TECAv8
 go
 --crear los esquemas respectivos para cada Modulo
@@ -27,7 +28,7 @@ go
 create schema Taller
 go
 
---crear las tablas y añadirlas al esquema de su repectivo modulo
+--crear las tablas y aï¿½adirlas al esquema de su repectivo modulo
 
 create table  Seguridad.Estado
 (
@@ -95,7 +96,7 @@ Apellido varchar(50),
 FechaNacimiento datetime null,
 genero varchar(10)not null,
 TipoIdentificacion varchar (11) not null,
-dirección varchar (100) not null,
+direcciï¿½n varchar (100) not null,
 telefono int not null,
 mail varchar (50) not null,
 IdEmpresa int not null,
@@ -1015,7 +1016,7 @@ create table Inventario.TipoArticulo
 (
 IdEmpresa			int,
 IdTipoArticulo		int not null,
-Descripción			varchar(500)not null,
+Descripciï¿½n			varchar(500)not null,
 IdGrupo				int,
 IdUsuario			int,
 IdEstado			int,
@@ -2198,7 +2199,7 @@ IdCodigoBarra int not null,
 serie numeric not null,
 IdMarca int not null,--relacion tablas de inventario
 fecha_depreciacion date not null,
-año_vidaUtil int not null,
+aï¿½o_vidaUtil int not null,
 IdEstado int not null,--relacion tabla general de Estado
 fecha_registro date not null,
 --haciendo las referencias constraint
@@ -2359,7 +2360,7 @@ IdProveedor int not null,
 FechaConstruccion date not null,
 CodigoCatastral int not null,
 NumeroPisos int not null,
-AñosVidaUtil int not null,
+Aï¿½osVidaUtil int not null,
 Ubicacion varchar(100)not null, 
 DimensionAncho numeric not null,
 DimensionLargo numeric not null,
